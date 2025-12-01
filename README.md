@@ -2,6 +2,10 @@
 
 **Copyright (c) 2025 Snowflake Inc. All rights reserved.**
 
+**WARRANTY: 
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.**
+
+
 **Author:** Ram Palagummi  
 
 ---
@@ -55,9 +59,8 @@ $$;
 
 For detailed instructions on creating MCP servers and configuring tools, refer to the [Snowflake MCP Server Documentation](https://docs.snowflake.com/en/user-guide/mcp-servers).
 
-### Step 2: Create Security Integration
-
-**IMPORTANT:** The `OAUTH_REDIRECT_URI` must match your Streamlit app URL!
+### Step 2: Create Security Integration (Sample code below)
+(For more information, see the [Snowflake Security Integration Documentation](https://docs.snowflake.com/en/sql-reference/sql/create-security-integration-oauth-snowflake).)
 
 ```sql
 CREATE OR REPLACE SECURITY INTEGRATION mcp_client_oauth
