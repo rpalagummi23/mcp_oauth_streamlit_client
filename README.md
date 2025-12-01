@@ -3,7 +3,6 @@
 **Copyright (c) 2025 Snowflake Inc. All rights reserved.**
 
 **Author:** Ram Palagummi  
-**Email:** ram.palagummi@snowflake.com
 
 ---
 
