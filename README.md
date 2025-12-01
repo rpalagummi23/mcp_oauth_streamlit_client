@@ -13,6 +13,7 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 ## About This Project
 
 This project provides a **Streamlit-based MCP (Model Context Protocol) client** that connects to Snowflake MCP servers using **OAuth 2.0 Authorization Code Flow with PKCE**.
+This project demonstrates a role-based access pattern where MCP servers are created per role, and the client passes both the MCP server name and a permitted role during authentication. The `ROLE` configuration parameter is passed in the OAuth scope as `session:role:<ROLE_NAME>` during the authorization flow, ensuring that the access token is bound to that specific role. This approach enables organizations to create multiple MCP servers with different tool configurations and data access permissions, then route users to the appropriate MCP server based on their role. If a user attempts to access an MCP server without the necessary role permissions, they can switch roles by re-authenticating with a different role configuration, allowing flexible yet secure access control across different MCP server instances.
 
 ### What It Does
 
