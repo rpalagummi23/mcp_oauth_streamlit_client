@@ -64,21 +64,22 @@ For detailed instructions on creating MCP servers and configuring tools, refer t
 (For more information, see the [Snowflake Security Integration Documentation](https://docs.snowflake.com/en/sql-reference/sql/create-security-integration-oauth-snowflake).)
 
 ```sql
-CREATE OR REPLACE SECURITY INTEGRATION mcp_client_oauth
+CREATE OR REPLACE SECURITY INTEGRATION SNOWFLAKE_OAUTH_INTEGRATION
   TYPE = OAUTH
   ENABLED = TRUE
   OAUTH_CLIENT = CUSTOM
   OAUTH_CLIENT_TYPE = 'CONFIDENTIAL'
   OAUTH_REDIRECT_URI = 'http://localhost:8501'
   OAUTH_ALLOW_NON_TLS_REDIRECT_URI = TRUE
-  OAUTH_REFRESH_TOKEN_VALIDITY = 86400 
-  BLOCKED_ROLES_LIST = ('ACCOUNTADMIN', 'SECURITYADMIN');
+  OAUTH_REFRESH_TOKEN_VALIDITY = 86400
+  PRE_AUTHORIZED_ROLES_LIST = ('granted_role_1>', 'granted_role_2>') -- optional
+  BLOCKED_ROLES_LIST = ('ACCOUNTADMIN', 'SECURITYADMIN'); -- optional
 ```
 
 ### Step 3: Get OAuth Credentials
 
 ```sql
-SELECT SYSTEM$SHOW_OAUTH_CLIENT_SECRETS('STREAMLIT_MCP_OAUTH');
+SELECT SYSTEM$SHOW_OAUTH_CLIENT_SECRETS('SNOWFLAKE_OAUTH_INTEGRATION');
 ```
 
 This returns:
